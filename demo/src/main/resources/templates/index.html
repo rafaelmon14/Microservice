@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>Certificados</title>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
+</head>
+<body>
+
+	<div class="container mt-4">
+		<table class="table">
+			<thead>
+				<tr>
+					<th>ID</th>
+					<th>CURSO</th>
+					<th>INSTITUCION</th>
+					<th>DURACION(H)</th>
+					<th>EDICION</th>
+					<th>INSTRUCTOR</th>
+					<th>COSTO</th>
+					<th>FECHA</th>
+					<th>ESTUDIANTE</th>
+					<th>EMAIL</th>
+					<th>ESTADO</th>
+					<th>MENCIONES</th>
+
+				</tr>
+			</thead>
+			<tbody>
+				<tr th:each="certificado:${certificados}">
+					<td th:text="${certificado.id}"></td>
+					<td th:text="${certificado.nombreCurso}"></td>
+					<td th:text="${certificado.nombreInstitucion}"></td>
+					<td th:text="${certificado.numeroHoras}"></td>
+					<td th:text="${certificado.edicionCurso}"></td>
+					<td th:text="${certificado.nombreInstructor}"></td>
+					<td th:text="${certificado.costo}"></td>
+					<td th:text="${certificado.fecha}"></td>
+					<td th:text="${certificado.nombreEstudiante}"></td>
+					<td th:text="${certificado.email}"></td>
+					<td th:text="${certificado.estado}"></td>
+					<td th:text="${certificado.mencion}"></td>
+				</tr>
+			</tbody>
+		</table>
+
+	</div>
+
+</body>
+</html>
