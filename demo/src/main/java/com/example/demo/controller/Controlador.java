@@ -8,6 +8,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import com.example.demo.interfaceService.ICertificadoService;
 import com.example.demo.modelo.Certificado;
@@ -32,6 +33,12 @@ public class Controlador {
 		return "form";
 	}
 	
+	@GetMapping("/buscar")
+	public String serch(@RequestParam(name="id", required=false, defaultValue="0") String id, Model model) {
+		int i = Integer.parseInt(id);
+		model.addAttribute("certificado", service.listarId(i));
+		return "serch";
+	}
 	
 	
 }

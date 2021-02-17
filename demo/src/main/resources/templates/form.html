@@ -5,61 +5,171 @@
 <title>Certificado</title>
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
 </head>
-<body>
+<style>
+* {
+  box-sizing: border-box;
+}
 
-	<div>
+input[type=text], select, textarea {
+  width: 100%;
+  padding: 12px;
+  border: none;
+  background: transparent;
+  resize: vertical;
+}
+
+label {
+  padding: 12px 12px 12px 0;
+  display: inline-block;
+}
+
+
+.container {
+  border-radius: 5px;
+  background-color: #f2f2f2;
+  padding: 20px;
+}
+
+.col-25 {
+  float: left;
+  width: 25%;
+  margin-top: 6px;
+}
+
+.col-75 {
+  float: left;
+  width: 75%;
+  margin-top: 6px;
+}
+
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+.row  {
+  border: 5px solid #ccc;
+  border-radius: 4px;
+}
+h2 {
+	padding-top: 10px;
+	padding-left: 20px;
+}
+label {
+	font-weight: 700;
+}
+/* Responsive layout - when the screen is less than 600px wide, make the two columns stack on top of each other instead of next to each other */
+@media screen and (max-width: 600px) {
+  .col-25, .col-75, input[type=submit] {
+    width: 100%;
+    margin-top: 0;
+  }
+}
+
+
+</style>
+<body>
+	<h2>DATOS CERTIFICADO:</h2>
+	<div class="container">
 		<form th:action="@{/save}" th:object="${certificado}" method="POST">
-			<div></div>
-			<div>
-				<div>
-					<label>Id</label> 
+			<div class="row">
+    			<div class="col-25"	>
+					<label>Id:</label> 
+				</div>
+				<div class="col-75">
 					<input type="text" th:field="*{id}" disabled="disabled" />
 				</div>
-				<div>
-					<label>Curso</label> 
-					<input type="text" th:field="*{nombreCurso}" disabled="disabled" />
+			</div>
+			<div class="row">
+    			<div class="col-25"	>	
+					<label>Estudiante:</label>  
 				</div>
-				<div>
-					<label>Institucion</label> 
-					<input type="text" th:field="*{nombreInstitucion}" disabled="disabled" />
-				</div>
-				<div>
-					<label>Duracion</label> 
-					<input type="text" th:field="*{numeroHoras}" disabled="disabled" />
-				</div>
-				<div>
-					<label>Edicion</label> 
-					<input type="text" th:field="*{edicionCurso}" disabled="disabled" />
-				</div>
-				<div>
-					<label>Instructor</label> 
-					<input type="text" th:field="*{nombreInstructor}" disabled="disabled" />
-				</div>
-				<div>
-					<label>Costo</label> 
-					<input type="text" th:field="*{costo}" disabled="disabled" />
-				</div>
-				<div>
-					<label>Fecha</label> 
-					<input type="text" th:field="*{fecha}" disabled="disabled" />
-				</div>
-				<div>
-					<label>Estudiante</label> 
+				<div class="col-75"> 
 					<input type="text" th:field="*{nombreEstudiante}" disabled="disabled" />
 				</div>
-				<div>
-					<label>Email</label> 
-					<input type="text" th:field="*{email}" disabled="disabled" />
+			</div>
+			<div class="row">
+    			<div class="col-25"	>	
+					<label>Curso:</label>
 				</div>
-				<div>
-					<label>Estado</label> 
-					<input type="text" th:field="*{estado}" disabled="disabled" />
-				</div>
-				<div>
-					<label>Mencion</label> 
-					<input type="text" th:field="*{mencion}" disabled="disabled" />
+				<div class="col-75"> 
+					<input type="text" th:field="*{nombreCurso}" disabled="disabled" />
 				</div>
 			</div>
+			<div class="row">
+    			<div class="col-25"	>	
+					<label>Institucion:</label>
+				</div>
+				<div class="col-75"> 
+					<input type="text" th:field="*{nombreInstitucion}" disabled="disabled" />
+				</div>
+			</div>
+			<div class="row">
+    			<div class="col-25"	>	
+					<label>Duracion:</label>
+				</div>
+				<div class="col-75"> 
+					<input type="text" th:field="*{numeroHoras}" disabled="disabled" />
+				</div>
+			</div> 
+			<div class="row">
+    			<div class="col-25"	>	
+					<label>Edicion:</label>
+				</div>
+				<div class="col-75"> 
+					<input type="text" th:field="*{edicionCurso}" disabled="disabled" />
+				</div>
+			</div> 
+			<div class="row">
+    			<div class="col-25"	>	
+					<label>Instructor:</label> 
+				</div>
+				<div class="col-75"> 
+					<input type="text" th:field="*{nombreInstructor}" disabled="disabled" />
+				</div>
+			</div> 			 
+			<div class="row">
+    			<div class="col-25"	>	
+					<label>Costo:</label>  
+				</div>
+				<div class="col-75"> 
+					<input type="text" th:field="*{costo}" disabled="disabled" />
+				</div>
+			</div> 	
+			<div class="row">
+    			<div class="col-25"	>	
+					<label>Fecha:</label>  
+				</div>
+				<div class="col-75"> 
+					<input type="text" th:field="*{fecha}" disabled="disabled" />
+				</div>
+			</div>  
+			<div class="row">
+    			<div class="col-25"	>	
+					<label>Email:</label>  
+				</div>
+				<div class="col-75"> 
+					<input type="text" th:field="*{email}" disabled="disabled" />
+				</div>
+			</div>
+			<div class="row">
+    			<div class="col-25"	>	
+					<label>Estado:</label>   
+				</div>
+				<div class="col-75"> 
+					<input type="text" th:field="*{estado}" disabled="disabled" />
+				</div>
+			</div>
+			<div class="row">
+    			<div class="col-25"	>	
+					<label>Mencion:</label>   
+				</div>
+				<div class="col-75"> 
+					<input type="text" th:field="*{mencion}" disabled="disabled" />
+				</div>
+			</div> 
+			
 		</form>
 	</div>
 </body>
