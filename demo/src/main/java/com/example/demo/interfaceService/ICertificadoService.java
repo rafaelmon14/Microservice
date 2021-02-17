@@ -8,5 +8,6 @@ import com.example.demo.modelo.Certificado;
 public interface ICertificadoService {
 	
 	public List<Certificado>listar();
-	public Optional<Certificado>buscar(int id);
+	
+	public Optional<Certificado> listarId(int id);
 }

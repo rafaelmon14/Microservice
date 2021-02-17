@@ -26,9 +26,9 @@ public class Controlador {
 		return "index";
 	}
 	
-	@GetMapping("/buscar/{id}")
-	public String buscar(@PathVariable int id, Model model) {
-		model.addAttribute("certificados", service.buscar(id));
+	@GetMapping("/listar/{id}")
+	public String listarId(@PathVariable int id, Model model) {
+		model.addAttribute("certificado", service.listarId(id));
 		return "form";
 	}
 	

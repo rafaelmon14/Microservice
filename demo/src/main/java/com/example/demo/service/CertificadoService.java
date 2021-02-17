@@ -15,13 +15,14 @@ public class CertificadoService implements ICertificadoService{
 
 	@Autowired
 	private ICertificado data;
+	
 	@Override
 	public List<Certificado> listar() {
 		return (List<Certificado>)data.findAll();
 	}
 
 	@Override
-	public Optional<Certificado> buscar(int id) {
+	public Optional<Certificado> listarId(int id) {
 		return data.findById(id);
 	}
 
